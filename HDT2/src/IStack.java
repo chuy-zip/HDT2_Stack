@@ -10,7 +10,7 @@ public interface IStack <T>{
 	/**
 	 * The push method adds a new element of the stack
 	 */
-	public void push();
+	public void push(T item);
 	
 	/**
 	 * Peek gets the item that is at the top of the stack
@@ -23,6 +23,7 @@ public interface IStack <T>{
 	 * @return How many elements are in the stack
 	 */
 	public int Size();
+
 }
 
 

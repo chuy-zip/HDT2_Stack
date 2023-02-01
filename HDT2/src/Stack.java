@@ -1,28 +1,40 @@
+import java.util.ArrayList;
 
 public class Stack<T> implements IStack<T>{
 
-	@Override
-	public T pop() {
-		// TODO Auto-generated method stub
-		return null;
+	private int StackSize;
+	private T opreand1;
+	private T TopElement;
+	private ArrayList<Float> StackOperands; 
+	
+	public Stack(String StackData){
+		StackOperands = new ArrayList<Float>();	
 	}
 
 	@Override
-	public void push() {
-		// TODO Auto-generated method stub
+	public T pop() {
+		
+		T EliminatedValue = (T) StackOperands.get(StackOperands.size() - 1);
+		StackOperands.remove(StackOperands.size() - 1);
+		
+		return EliminatedValue;
+	}
+
+	@Override
+	public void push(T item) {
+		StackOperands.add((Float) item);
 		
 	}
 
 	@Override
 	public T Peek() {
-		// TODO Auto-generated method stub
-		return null;
+		return (T) StackOperands.get(StackOperands.size() - 1);
 	}
 
 	@Override
 	public int Size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return StackOperands.size();
 	}
+
 
 }
