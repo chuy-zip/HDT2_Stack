@@ -1,10 +1,6 @@
 
 public class StackManager implements ICalculator{
 	
-	public StackManager(){
-		
-	}
-
 	@Override
 	public float Add(float number1, float number2) {
 		

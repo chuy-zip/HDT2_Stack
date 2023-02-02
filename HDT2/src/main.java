@@ -26,29 +26,58 @@ public class main {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(MyFile));
 			StackData = reader.readLine();
-			System.out.println(StackData);	
 	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		/**
-		 * Storing the data from the file into a List
+		 * Storing the data from the file into an ArrayList and creating the calculator and stack object
 		 */
+		String[] strSplit = StackData.split(" ");
 		
-		
-		Stack myStack = new Stack<Object>(StackData);
+		Stack<Object> myStack = new Stack<Object>();
 		StackManager Operation = new StackManager();
 		
-		String[] strSplit = StackData.split(" "); 
+		 
 		System.out.println("...................................");
 		
+		/**
+		 * This loop is to iterate through all the elements that were present in the txt file
+		 */
 		for (int i = 0; i < strSplit.length; i++) {
-			System.out.println(strSplit[i]);
+
 			
+			try {
+		        float pushedValue = Float.parseFloat(strSplit[i]);
+		        System.out.println("Push al operando: " + strSplit[i]);
+		        myStack.push(pushedValue);
+				
+		    } catch(NumberFormatException e) {
+		        // Not float
+		    }
+			
+			if(strSplit[i].equals("+")) {
+				System.out.println("Operacion: Sumar, pop, pop y push del resultado");
+				float FirstOperand = (float) myStack.pop();
+				float SecondOperand = (float) myStack.pop();
+				float result = Operation.Add(FirstOperand, SecondOperand);
+				myStack.push(result);
+				
+			}
+			
+			if(strSplit[i].equals("-")) {
+				System.out.println("Operacion: Restar, pop, pop y push del resultado");
+			}
+			
+			if(strSplit[i].equals("*")) {
+				System.out.println("Operacion: Multiplicar, pop, pop y push del resultado");
+			}
+			
+			if(strSplit[i].equals("/")) {
+				System.out.println("Operacion: Dividir, pop, pop y push del resultado");
+			}
 		}
-		
-		System.out.println(myStack.Peek());
 		
 	}
 		

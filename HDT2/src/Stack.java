@@ -3,11 +3,9 @@ import java.util.ArrayList;
 public class Stack<T> implements IStack<T>{
 
 	private int StackSize;
-	private T opreand1;
-	private T TopElement;
 	private ArrayList<Float> StackOperands; 
 	
-	public Stack(String StackData){
+	public Stack(){
 		StackOperands = new ArrayList<Float>();	
 	}
 
@@ -22,7 +20,13 @@ public class Stack<T> implements IStack<T>{
 
 	@Override
 	public void push(T item) {
+		String currentStack = "";
 		StackOperands.add((Float) item);
+		for (Float floats : StackOperands) {
+			currentStack += floats + ", ";  
+		}
+		
+		System.out.println("Estado actual: " + currentStack + "\n");
 		
 	}
 
