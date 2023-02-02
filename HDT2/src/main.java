@@ -47,6 +47,7 @@ public class main {
 		 */
 		for (int i = 0; i < strSplit.length; i++) {
 
+			System.out.println("Entrada: " + strSplit[i]);
 			
 			try {
 		        float pushedValue = Float.parseFloat(strSplit[i]);
@@ -68,14 +69,27 @@ public class main {
 			
 			if(strSplit[i].equals("-")) {
 				System.out.println("Operacion: Restar, pop, pop y push del resultado");
+				float FirstOperand = (float) myStack.pop();
+				float SecondOperand = (float) myStack.pop();
+				float result = Operation.Substraction(FirstOperand, SecondOperand);
+				myStack.push(result);
+			
 			}
 			
 			if(strSplit[i].equals("*")) {
 				System.out.println("Operacion: Multiplicar, pop, pop y push del resultado");
+				float FirstOperand = (float) myStack.pop();
+				float SecondOperand = (float) myStack.pop();
+				float result = Operation.Multiply(FirstOperand, SecondOperand);
+				myStack.push(result);
 			}
 			
 			if(strSplit[i].equals("/")) {
 				System.out.println("Operacion: Dividir, pop, pop y push del resultado");
+				float FirstOperand = (float) myStack.pop();
+				float SecondOperand = (float) myStack.pop();
+				float result = Operation.Divition(FirstOperand, SecondOperand);
+				myStack.push(result);
 			}
 		}
 		
