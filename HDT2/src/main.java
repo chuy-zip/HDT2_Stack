@@ -9,7 +9,7 @@ public class main {
 		Scanner Scan = new Scanner(System.in);
 		int Option = 0;
 		
-		System.out.println("Desea leer el archivo para realizar la operacion? Presione 1 para si o cualquier otra cosa para salir");
+		System.out.println("Desea leer el archivo para realizar la operacion? \nPresione 1 para si o cualquier otra cosa para salir");
 		Option = Scan.nextInt();
 		
 		if(Option != 1) {
@@ -60,8 +60,8 @@ public class main {
 			
 			if(strSplit[i].equals("+")) {
 				System.out.println("Operacion: Sumar, pop, pop y push del resultado");
-				float FirstOperand = (float) myStack.pop();
 				float SecondOperand = (float) myStack.pop();
+				float FirstOperand = (float) myStack.pop();
 				float result = Operation.Add(FirstOperand, SecondOperand);
 				myStack.push(result);
 				
@@ -69,8 +69,8 @@ public class main {
 			
 			if(strSplit[i].equals("-")) {
 				System.out.println("Operacion: Restar, pop, pop y push del resultado");
-				float FirstOperand = (float) myStack.pop();
 				float SecondOperand = (float) myStack.pop();
+				float FirstOperand = (float) myStack.pop();
 				float result = Operation.Substraction(FirstOperand, SecondOperand);
 				myStack.push(result);
 			
@@ -78,16 +78,16 @@ public class main {
 			
 			if(strSplit[i].equals("*")) {
 				System.out.println("Operacion: Multiplicar, pop, pop y push del resultado");
-				float FirstOperand = (float) myStack.pop();
 				float SecondOperand = (float) myStack.pop();
+				float FirstOperand = (float) myStack.pop();
 				float result = Operation.Multiply(FirstOperand, SecondOperand);
 				myStack.push(result);
 			}
 			
 			if(strSplit[i].equals("/")) {
 				System.out.println("Operacion: Dividir, pop, pop y push del resultado");
-				float FirstOperand = (float) myStack.pop();
 				float SecondOperand = (float) myStack.pop();
+				float FirstOperand = (float) myStack.pop();
 				float result = Operation.Divition(FirstOperand, SecondOperand);
 				myStack.push(result);
 			}

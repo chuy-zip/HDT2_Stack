@@ -11,9 +11,16 @@ public class Stack<T> implements IStack<T>{
 
 	@Override
 	public T pop() {
+		T EliminatedValue = null;
+		try {
+			EliminatedValue = (T) StackOperands.get(StackOperands.size() - 1);
+			StackOperands.remove(StackOperands.size() - 1);
+		} catch (Exception e) {
+			System.out.println("Error, no se encontraron suficientes operandos para las operacioens pendientes");
+			System.out.println("Se terminaran las operaciones");
+			System.exit(0);
+		}
 		
-		T EliminatedValue = (T) StackOperands.get(StackOperands.size() - 1);
-		StackOperands.remove(StackOperands.size() - 1);
 		
 		return EliminatedValue;
 	}
