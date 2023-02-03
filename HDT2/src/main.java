@@ -67,7 +67,7 @@ public class main {
 				
 			}
 			
-			if(strSplit[i].equals("-")) {
+			else if(strSplit[i].equals("-")) {
 				System.out.println("Operacion: Restar, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
 				float FirstOperand = (float) myStack.pop();
@@ -76,7 +76,7 @@ public class main {
 			
 			}
 			
-			if(strSplit[i].equals("*")) {
+			else if(strSplit[i].equals("*")) {
 				System.out.println("Operacion: Multiplicar, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
 				float FirstOperand = (float) myStack.pop();
@@ -84,12 +84,16 @@ public class main {
 				myStack.push(result);
 			}
 			
-			if(strSplit[i].equals("/")) {
+			else if(strSplit[i].equals("/")) {
 				System.out.println("Operacion: Dividir, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
 				float FirstOperand = (float) myStack.pop();
 				float result = Operation.Divition(FirstOperand, SecondOperand);
 				myStack.push(result);
+			}
+			
+			else {
+				System.out.println(strSplit[i] + ", no es un caracter valido para operando o signo de operacion");
 			}
 		}
 		
