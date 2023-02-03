@@ -1,12 +1,19 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Hoja de trabajo 2. Algoritmos y Estructuras de datos 
+ * Ricardo Chuy 221007
+ * The objective of this program is to simulate a postfix calculator with a stack.
+ */
+
 import java.util.ArrayList;
 
 public class Stack<T> implements IStack<T>{
 
 	private int StackSize;
-	private ArrayList<Float> StackOperands; 
+	private ArrayList<T> StackOperands; 
 	
 	public Stack(){
-		StackOperands = new ArrayList<Float>();	
+		StackOperands = new ArrayList<T>();	
 	}
 
 	@Override
@@ -28,9 +35,9 @@ public class Stack<T> implements IStack<T>{
 	@Override
 	public void push(T item) {
 		String currentStack = "";
-		StackOperands.add((Float) item);
-		for (Float floats : StackOperands) {
-			currentStack += floats + ", ";  
+		StackOperands.add(item);
+		for (T items : StackOperands) {
+			currentStack += items + ", ";  
 		}
 		
 		System.out.println("Estado actual: " + currentStack + "\n");

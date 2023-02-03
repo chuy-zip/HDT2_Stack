@@ -1,6 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Hoja de trabajo 2. Algoritmos y Estructuras de datos 
+ * Ricardo Chuy 221007
+ * The objective of this program is to simulate a postfix calculator with a stack.
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
+
+
 
 public class main {
 
@@ -58,6 +67,9 @@ public class main {
 		        // Not float
 		    }
 			
+			/**
+			 * Addition case
+			 */
 			if(strSplit[i].equals("+")) {
 				System.out.println("Operacion: Sumar, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
@@ -67,6 +79,9 @@ public class main {
 				
 			}
 			
+			/**
+			 * Substraction case
+			 */
 			else if(strSplit[i].equals("-")) {
 				System.out.println("Operacion: Restar, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
@@ -76,6 +91,9 @@ public class main {
 			
 			}
 			
+			/**
+			 * Multiplication case
+			 */
 			else if(strSplit[i].equals("*")) {
 				System.out.println("Operacion: Multiplicar, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
@@ -84,6 +102,9 @@ public class main {
 				myStack.push(result);
 			}
 			
+			/**
+			 * Division operand
+			 */
 			else if(strSplit[i].equals("/")) {
 				System.out.println("Operacion: Dividir, pop, pop y push del resultado");
 				float SecondOperand = (float) myStack.pop();
@@ -92,6 +113,9 @@ public class main {
 				myStack.push(result);
 			}
 			
+			/**
+			 * Case for an invalid character, this will not be added to the stack
+			 */
 			else {
 				System.out.println(strSplit[i] + ", no es un caracter valido para operando o signo de operacion");
 			}

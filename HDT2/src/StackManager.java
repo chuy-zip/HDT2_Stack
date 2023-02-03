@@ -1,3 +1,9 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Hoja de trabajo 2. Algoritmos y Estructuras de datos 
+ * Ricardo Chuy 221007
+ * The objective of this program is to simulate a postfix calculator with a stack.
+ */
 
 public class StackManager implements ICalculator{
 	
