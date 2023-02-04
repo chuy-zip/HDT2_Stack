@@ -10,7 +10,6 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 
-
 public class main {
 
 	public static void main(String[] args) {
@@ -57,15 +56,6 @@ public class main {
 		for (int i = 0; i < strSplit.length; i++) {
 
 			System.out.println("Entrada: " + strSplit[i]);
-			
-			try {
-		        float pushedValue = Float.parseFloat(strSplit[i]);
-		        System.out.println("Push al operando: " + strSplit[i]);
-		        myStack.push(pushedValue);
-				
-		    } catch(NumberFormatException e) {
-		        // Not float
-		    }
 			
 			/**
 			 * Addition case
@@ -117,7 +107,14 @@ public class main {
 			 * Case for an invalid character, this will not be added to the stack
 			 */
 			else {
-				System.out.println(strSplit[i] + ", no es un caracter valido para operando o signo de operacion");
+				try {
+			        float pushedValue = Float.parseFloat(strSplit[i]);
+			        System.out.println("Push al operando: " + strSplit[i]);
+			        myStack.push(pushedValue);
+					
+			    } catch(NumberFormatException e) {
+			    	System.out.println(strSplit[i] + ", no es un caracter valido para operando o signo de operacion\n");
+			    }
 			}
 		}
 		
