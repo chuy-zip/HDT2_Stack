@@ -72,4 +72,51 @@ public class testClass {
 		
 		assertEquals( 15.0f , OperationTester.Add(val1, val2) , 0D);
 	}
+	
+	@Test
+	public void ResultaOfSubstractionIs20f() {
+		Stack<Object> testStack = new Stack<Object>();
+		StackManager OperationTester = new StackManager();
+		
+		testStack.push(3.0f);
+		testStack.push(21.0f);
+		
+		testStack.push(1.0f);
+		float val2 = (float) testStack.pop();
+		float val1 = (float) testStack.pop();
+		
+		assertEquals( 20.0f , OperationTester.Substraction(val1, val2) , 0D);
+	}
+	
+	@Test
+	public void ResultaOfSubstractionIs45f() {
+		Stack<Object> testStack = new Stack<Object>();
+		StackManager OperationTester = new StackManager();
+		
+		testStack.push(2.20f);
+		float result = OperationTester.Add(5.00f , 10.00f);
+		testStack.push(result);
+		
+		testStack.push(3.0f);
+		float val2 = (float) testStack.pop();
+		float val1 = (float) testStack.pop();
+		
+		assertEquals( 45.0f , OperationTester.Multiply(val1, val2) , 0D);
+	}
+	
+	@Test
+	public void ResultaOfDivitionIs2f() {
+		Stack<Object> testStack = new Stack<Object>();
+		StackManager OperationTester = new StackManager();
+		
+		testStack.push(2.20f);
+		testStack.push(250.0f);
+		
+		testStack.push(125.0f);
+		float val2 = (float) testStack.pop();
+		float val1 = (float) testStack.pop();
+		
+		assertEquals( 2.0f , OperationTester.Divition(val1, val2) , 0D);
+	}
+	
 }
